@@ -21,13 +21,13 @@ export const Contact: FC = () => {
      */
     const schema = z.object({
         name: z.string().min(2, {
-            message: "Name should be at least 2 characters",
+            message: "El nombre debe tener al menos 2 caracteres",
         }),
         email: z.string().email({
-            message: "Please enter a valid email",
+            message: "Por favor, introduzca un correo electrónico válido",
         }),
         message: z.string().min(10, {
-            message: "Message should be at least 10 characters",
+            message: "El mensaje debe tener al menos 10 caracteres",
         }),
     });
 
