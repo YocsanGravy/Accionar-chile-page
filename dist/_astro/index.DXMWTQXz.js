@@ -1,0 +1,1 @@
+import{j as t}from"./emotion-styled.browser.esm.CnbYx5VZ.js";import{B as m,a as u,b as B}from"./styled.DrM7DWRK.js";const f=({link:n,target:o,children:r,align:a,variant:s="primary",asButton:p,type:x,...e})=>{const i=p?u:B;return t.jsx(m,{$align:a,children:t.jsx(i,{href:n,target:o,...e,$variant:s,children:r})})};export{f as B};

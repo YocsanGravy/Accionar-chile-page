@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agency-aestro-astro.netlify.app/sitemap-index.xml

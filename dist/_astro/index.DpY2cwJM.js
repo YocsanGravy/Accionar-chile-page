@@ -1,0 +1,18 @@
+import"./index.DdRMN4IK.js";import{s as h}from"./emotion-styled.browser.esm.CnbYx5VZ.js";var v={exports:{}},r={};/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var t=typeof Symbol=="function"&&Symbol.for,S=t?Symbol.for("react.element"):60103,b=t?Symbol.for("react.portal"):60106,c=t?Symbol.for("react.fragment"):60107,f=t?Symbol.for("react.strict_mode"):60108,i=t?Symbol.for("react.profiler"):60114,m=t?Symbol.for("react.provider"):60109,u=t?Symbol.for("react.context"):60110,x=t?Symbol.for("react.async_mode"):60111,y=t?Symbol.for("react.concurrent_mode"):60111,l=t?Symbol.for("react.forward_ref"):60112,p=t?Symbol.for("react.suspense"):60113,T=t?Symbol.for("react.suspense_list"):60120,d=t?Symbol.for("react.memo"):60115,$=t?Symbol.for("react.lazy"):60116,_=t?Symbol.for("react.block"):60121,C=t?Symbol.for("react.fundamental"):60117,E=t?Symbol.for("react.responder"):60118,P=t?Symbol.for("react.scope"):60119;function o(e){if(typeof e=="object"&&e!==null){var n=e.$$typeof;switch(n){case S:switch(e=e.type,e){case x:case y:case c:case i:case f:case p:return e;default:switch(e=e&&e.$$typeof,e){case u:case l:case $:case d:case m:return e;default:return n}}case b:return n}}}function F(e){return o(e)===y}r.AsyncMode=x;r.ConcurrentMode=y;r.ContextConsumer=u;r.ContextProvider=m;r.Element=S;r.ForwardRef=l;r.Fragment=c;r.Lazy=$;r.Memo=d;r.Portal=b;r.Profiler=i;r.StrictMode=f;r.Suspense=p;r.isAsyncMode=function(e){return F(e)||o(e)===x};r.isConcurrentMode=F;r.isContextConsumer=function(e){return o(e)===u};r.isContextProvider=function(e){return o(e)===m};r.isElement=function(e){return typeof e=="object"&&e!==null&&e.$$typeof===S};r.isForwardRef=function(e){return o(e)===l};r.isFragment=function(e){return o(e)===c};r.isLazy=function(e){return o(e)===$};r.isMemo=function(e){return o(e)===d};r.isPortal=function(e){return o(e)===b};r.isProfiler=function(e){return o(e)===i};r.isStrictMode=function(e){return o(e)===f};r.isSuspense=function(e){return o(e)===p};r.isValidElementType=function(e){return typeof e=="string"||typeof e=="function"||e===c||e===y||e===i||e===f||e===p||e===T||typeof e=="object"&&e!==null&&(e.$$typeof===$||e.$$typeof===d||e.$$typeof===m||e.$$typeof===u||e.$$typeof===l||e.$$typeof===C||e.$$typeof===E||e.$$typeof===P||e.$$typeof===_)};r.typeOf=o;v.exports=r;var A=v.exports,M=A,I={$$typeof:!0,render:!0,defaultProps:!0,displayName:!0,propTypes:!0},R={$$typeof:!0,compare:!0,defaultProps:!0,displayName:!0,propTypes:!0,type:!0},g={};g[M.ForwardRef]=I;g[M.Memo]=R;function w(){for(var e=arguments.length,n=new Array(e),s=0;s<e;s++)n[s]=arguments[s];return h(n)}var j=function(){var n=w.apply(void 0,arguments),s="animation-"+n.name;return{name:s,styles:"@keyframes "+s+"{"+n.styles+"}",anim:1,toString:function(){return"_EMO_"+this.name+"_"+this.styles+"_EMO_"}}};const a={base:0,sm:576,md:768,lg:992,xl:1200,xxl:1440,xxxl:1920},D={min:e=>`@media (min-width: ${a[e]}px)`,max:e=>`@media (max-width: ${a[e]}px)`,between:(e,n)=>`@media (min-width: ${a[e]}px) and (max-width: ${a[n]}px)`};w`
+    :root {
+        --primary: ${"#FFFFFF"};
+        --secondary: ${"#20222e"};
+        --tertiary: ${"#ff8601"};
+
+        --bg-element: ${"#FFFFFF"};
+        --text-default: ${"#101118"};
+        --text-secondary: ${"#2f3561"};
+    }
+`;const L={primary:"var(--primary)",secondary:"var(--secondary)",tertiary:"var(--tertiary)",bgElement:"var(--bg-element)",textDefault:"var(--text-default)",textSecondary:"var(--text-secondary)"};export{D as M,L as T,w as c,j as k};
