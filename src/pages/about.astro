@@ -1,0 +1,142 @@
+---
+import { ContentSection } from "@modules/ContentSection";
+import Layout from "../layouts/Layout.astro";
+import { FadeIn } from "@utils/animations/FadeIn";
+import { BoxOffers } from "@modules/BoxOffers";
+import { Container } from "@components/Container";
+import { Hero } from "@modules/Hero";
+---
+
+<Layout
+    title="Accionar Chile | Sobre Nosotros"
+    description="Conoce nuestra misión y visión para transformar vidas a través del coaching y el desarrollo personal."
+>
+    <main class="page-content">
+        <!-- Sección de Presentación -->
+        <ContentSection
+            style={{
+                maxWidth: "600px",
+                margin: "0 auto",
+            }}
+        >
+            <FadeIn client:visible>
+                <h1>Sobre Nosotros</h1>
+                <p>
+                    En <b>Accionar Chile</b>, creemos en el potencial ilimitado de cada persona. Nuestra misión es 
+                    proporcionar herramientas prácticas de desarrollo personal y fomentar una comunidad colaborativa 
+                    orientada a la transformación personal y comunitaria.
+                </p>
+            </FadeIn>
+        </ContentSection>
+
+        <!-- Sección Misión -->
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                switchPlaces: true,
+                title: `Nuestra Misión`,
+                paragraph: `
+                    Impartimos Programas de Coaching con herramientas prácticas de Desarrollo Personal, 
+                    para que nuestros clientes logren <b>conectar con su poder interior</b> y vivir en su máxima posibilidad.  
+                    Además, fomentamos una <b>Comunidad Colaborativa Contínua</b> enfocada en alcanzar 
+                    objetivos tanto personales como comunitarios.
+                `,
+                image: {
+                    src: "https://picsum.photos/630/400?random=2",
+                    alt: "Imagen Misión Accionar Chile",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+
+        <!-- Sección Visión -->
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                title: `Nuestra Visión`,
+                paragraph: `
+                    Nuestra visión es <b>elevar el Nivel de Consciencia en el Mundo</b>, 
+                    inspirando a las personas a descubrir su verdadero potencial y transformar sus vidas.
+                    Creemos en un mundo donde cada persona pueda conectar con su poder y vivir en su máxima posibilidad.
+                `,
+                image: {
+                    src: "https://picsum.photos/630/400?random=3",
+                    alt: "Imagen Visión Accionar Chile",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+
+        <!-- Sección Valores de Accionar Chile -->
+        <section id="values">
+            <Container>
+            <FadeIn client:visible>
+                <h2>Nuestros Valores</h2>
+            </FadeIn>
+            </Container>
+
+            <BoxOffers
+                client:load
+                boxes={[
+                    {
+                        content: `
+                        <h2>Crecimiento Personal</h2>
+                        <p>Facilitamos el desarrollo de habilidades que potencian la transformación personal y profesional.</p>
+                        `,
+                    },
+                    {
+                        content: `
+                        <h2>Comunidad y Colaboración</h2>
+                        <p>Creemos en el poder del apoyo mutuo para alcanzar metas individuales y colectivas.</p>
+                        `,
+                    },
+                    {
+                        content: `
+                        <h2>Conciencia y Evolución</h2>
+                        <p>Promovemos un enfoque consciente en la vida y el trabajo para lograr cambios significativos.</p>
+                        `,
+                    },
+                ]}
+            />
+        </section>
+
+        <!-- Sección Redes Sociales -->
+        <Container>
+            <FadeIn client:visible>
+                <h2>Conéctate con nosotros</h2>
+                <p>Síguenos en nuestras redes sociales para conocer más sobre nuestra comunidad y eventos.</p>
+            </FadeIn>
+        </Container>
+
+        <BoxOffers
+            client:load
+            boxes={[
+                {
+                    asLink: true,
+                    href: "https://www.facebook.com",
+                    content: `
+                        <h3>Facebook</h3>
+                    `,
+                },
+                {
+                    asLink: true,
+                    href: "https://www.linkedin.com/c",
+                    content: `
+                        <h3>LinkedIn</h3>
+                    `,
+                },
+                {
+                    asLink: true,
+                    href: "https://www.twitter.com",
+                    content: `
+                        <h3>Twitter</h3>
+                    `,
+                },
+            ]}
+        />
+    </main>
+</Layout>

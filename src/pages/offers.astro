@@ -1,0 +1,136 @@
+---
+import { Hero } from "@modules/Hero";
+import Layout from "../layouts/Layout.astro";
+import { LogosSlider } from "@modules/LogosSlider";
+
+import { FadeIn } from "@utils/animations/FadeIn";
+import { Button } from "@components/Button";
+import { Icon } from "@static/icons";
+import { Contact } from "@modules/Contact";
+import { BoxOffers } from "@modules/BoxOffers";
+import { Container } from "@components/Container";
+---
+
+<Layout
+    title="Programa Sinergéticos | Desarrollo Personal y Comunitario"
+    description="Descubre el programa Sinergéticos y potencia tu crecimiento personal y profesional."
+>
+    <main class="page-content">
+        <!-- Sección de Bienvenida -->
+        <Hero heroType="center" client:load>
+            <FadeIn delay={0.2} client:load>
+                <h1>Bienvenido a <span style="color: #ff8601;">Sinergéticos</span></h1>
+                <p>
+                    Un programa diseñado para potenciar el desarrollo personal y comunitario, 
+                    a través de la transformación individual y el trabajo colaborativo.
+                </p>
+            </FadeIn>
+            <FadeIn delay={0.3} client:load>
+                <Button link="#beneficios" variant="secondary">
+                    Beneficios
+                </Button>
+            </FadeIn>
+            <FadeIn client:load delay={0.4}>
+                <div class="icon-wrapper">
+                    <Icon iconData="arrowDown" alt="arrow down icon" />
+                </div>
+            </FadeIn>
+        </Hero>
+
+        <LogosSlider client:load />
+
+        <!-- Niveles del Programa -->
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                title: `Primer Nivel: Revisión de Creencias Limitantes`,
+                paragraph: `Identifica y transforma aquellas creencias que te impiden avanzar. 
+                Aprende a reprogramar tu mente y liberar tu máximo potencial.`,
+                image: {
+                    src: "https://picsum.photos/630/400?random=1",
+                    alt: "Imagen Revisión de Creencias Limitantes",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                switchPlaces: true,
+                title: `Segundo Nivel: Conecta con tu Poder`,
+                paragraph: `Descubre tus cualidades esenciales y fortalece tu identidad. 
+                Aprende a reconocer el poder que hay en ti para alcanzar tus metas.`,
+                image: {
+                    src: "https://picsum.photos/630/400?random=2",
+                    alt: "Imagen Conectar con tu Poder",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                title: `Tercer Nivel: Creación y Trabajo Colaborativo`,
+                paragraph: `Convierte tus ideas en acciones concretas. Diseña y realiza objetivos personales 
+                y comunitarios a través de una red de apoyo colaborativa.`,
+                image: {
+                    src: "https://picsum.photos/630/400?random=3",
+                    alt: "Imagen Creación y Trabajo Colaborativo",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+
+        <!-- Beneficios de la Comunidad Sinergéticos -->
+        <section id="beneficios">
+
+           
+            <BoxOffers
+                client:load
+                boxes={[
+                    {
+                        content: `
+                        <h2>Programa de acompañamiento continuo</h2>
+                        <p>Sesiones con Coaches profesionales para guiar tu crecimiento personal y profesional.</p>
+                        `,
+                    },
+                    {
+                        content: `
+                        <h2>Capacitación y formación permanente</h2>
+                        <p>Acceso a cursos, talleres y mentorías en diversas áreas de desarrollo personal.</p>
+                        `,
+                    },
+                    {
+                        content: `
+                        <h2>Grupos de estudio y apoyo</h2>
+                        <p>Comunidad activa donde recibirás apoyo para alcanzar tus objetivos.</p>
+                        `,
+                    },
+                    {
+                        content: `
+                        <h2>Directorio de Emprendimientos y Servicios</h2>
+                        <p>Conéctate con una red de profesionales y emprendedores dentro de la comunidad.</p>
+                        `,
+                    },
+                    {
+                        content: `
+                        <h2>Eventos y Networking</h2>
+                        <p>Participa en actividades exclusivas diseñadas para fortalecer tus contactos y oportunidades.</p>
+                        `,
+                    },
+                ]}
+            />
+        </section>
+
+        <!-- Formulario de Contacto -->
+        <Contact client:load />
+    </main>
+</Layout>
