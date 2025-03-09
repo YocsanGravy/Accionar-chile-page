@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 export enum Colors {
     white = "#FFFFFF",
     grey = "#d5d5d5",
-    tertiary = "#ff8601",
+    tertiary = "#1213fc",
     tertiaryLight = "#2f3561",
     richBlack = "#0D1B2A",
     dark = "#101118",
