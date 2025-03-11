@@ -3,46 +3,57 @@ import * as S from "./styled";
 import { Container } from "@components/Container";
 import { FadeIn } from "@utils/animations/FadeIn";
 
+// 🔹 Importamos los iconos de FontAwesome
+import { FaUserGraduate, FaUsers, FaBriefcase, FaMicrophone, FaBuilding, FaHeart, FaHandHoldingHeart, FaChalkboardTeacher, FaPiggyBank } from "react-icons/fa";
+
+// 🔹 Diccionario de iconos para usarlos dinámicamente
+const iconMap: { [key: string]: JSX.Element } = {
+    FaUserGraduate: <FaUserGraduate />,
+    FaUsers: <FaUsers />,
+    FaBriefcase: <FaBriefcase />,
+    FaMicrophone: <FaMicrophone />,
+    FaBuilding: <FaBuilding />,
+    FaHandHoldingHeart: <FaHandHoldingHeart />,
+    FaHeart: <FaHeart />,
+    FaChalkboardTeacher: <FaChalkboardTeacher />,
+    FaPiggyBank: <FaPiggyBank />,
+};
+
 type LeadTextsProps = {
     title: string;
-    contentText: {
-        content: string;
+    services: {
+        icon: string; // 🔹 Ahora el icono es un string
+        title: string;
+        description: string;
     }[];
 };
 
-// Hide exp is for hiding the commercial experience - on the LeadTexts page cuz there is a separate section for that
-export const LeadTexts: FC<LeadTextsProps> = ({ contentText, title }) => {
-    //  do not render if there is no contentText
-    if (!contentText && !title) {
-        return null;
-    }
+export const LeadTexts: FC<LeadTextsProps> = ({ services, title }) => {
+    if (!services || !title) return null;
 
     return (
         <S.LeadTextsStyled>
             <Container>
                 <S.LeadTextsContent>
-                    {title && (
-                        <S.LeadTextsContentTitle>
-                            <FadeIn>
-                                <h2
-                                    dangerouslySetInnerHTML={{ __html: title }}
-                                />
+                    <S.LeadTextsContentTitle>
+                        <FadeIn>
+                            <h2 dangerouslySetInnerHTML={{ __html: title }} />
+                        </FadeIn>
+                    </S.LeadTextsContentTitle>
+                    <S.ServicesGrid>
+                        {services.map((service, index) => (
+                            <FadeIn key={index}>
+                                <S.ServiceCard>
+                                    <S.ServiceIcon>
+                                        {iconMap[service.icon] || <FaBriefcase />} 
+                                        {/* 🔹 Si no encuentra el icono, usa FaBriefcase por defecto */}
+                                    </S.ServiceIcon>
+                                    <S.ServiceTitle>{service.title}</S.ServiceTitle>
+                                    <S.ServiceDescription>{service.description}</S.ServiceDescription>
+                                </S.ServiceCard>
                             </FadeIn>
-                        </S.LeadTextsContentTitle>
-                    )}
-                    <S.LeadTextsContentText>
-                        {contentText.map((content, index) => {
-                            return (
-                                <FadeIn key={index}>
-                                    <div
-                                        dangerouslySetInnerHTML={{
-                                            __html: content.content,
-                                        }}
-                                    />
-                                </FadeIn>
-                            );
-                        })}
-                    </S.LeadTextsContentText>
+                        ))}
+                    </S.ServicesGrid>
                 </S.LeadTextsContent>
             </Container>
         </S.LeadTextsStyled>

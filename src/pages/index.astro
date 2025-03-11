@@ -7,31 +7,74 @@ import { LeadTexts } from "@modules/LeadTexts";
 import { Team } from "../modules/Team/Team"; 
 import { Container } from "@components/Container";
 import { Modal } from "../modules/Modal/Modal";
-
-
 import { BoxOffers } from "@modules/BoxOffers";
 import { ContentSection } from "@modules/ContentSection";
 import { FadeIn } from "@utils/animations/FadeIn";
 import { Contact } from "@modules/Contact";
 import HeroImage from "@static/images/hero-img.webp?url";
 
+// 🔹 Importamos los iconos para los servicios
+import { FaUserGraduate, FaUsers, FaBriefcase, FaMicrophone, FaBuilding, FaHeart, FaHandHoldingHeart, FaChalkboardTeacher, FaPiggyBank } from "react-icons/fa";
+
+const services = [
+    {
+        icon: "FaUserGraduate",
+        title: "Coaching para adolescentes",
+        description: "Acompañamiento y desarrollo personal para potenciar habilidades...",
+    },
+    {
+        icon: "FaUsers",
+        title: "Escuela para padres",
+        description: "Herramientas efectivas para fortalecer la comunicación...",
+    },
+    {
+        icon: "FaBriefcase",
+        title: "Coaching para emprendedores",
+        description: "Estrategias y mentoría para impulsar negocios...",
+    },
+    {
+        icon: "FaMicrophone",
+        title: "Eventos con conferencistas",
+        description: "Organización de eventos exclusivos con expertos...",
+    },
+    {
+        icon: "FaBuilding",
+        title: "Coaching para empresas",
+        description: "Capacitación y desarrollo de equipos...",
+    },
+    {
+        icon: "FaHandHoldingHeart",
+        title: "Coaching para la tercera edad",
+        description: "Acompañamiento para fortalecer el bienestar...",
+    },
+    {
+        icon: "FaHeart",
+        title: "Coaching para parejas",
+        description: "Mejora de la comunicación y fortalecimiento del vínculo...",
+    },
+    {
+        icon: "FaChalkboardTeacher",
+        title: "Escuela para entrenadores",
+        description: "Formación para futuros coaches profesionales...",
+    },
+    {
+        icon: "FaPiggyBank",
+        title: "Talleres de Inteligencia Financiera",
+        description: "Estrategias prácticas para una gestión financiera efectiva...",
+    },
+];
 
 ---
 
-
 <style>
-    .hero-separator {
+.hero-separator {
     width: 100%;
-    height: 30px;
-    background: repeating-linear-gradient(
-        -45deg,
-        #ffffff,
-        #ffffff 10px,
-        #f2f2f2 10px,
-        #f2f2f2 20px
-    );
-
+    height: 1px; /* 🔹 Línea delgada para un aspecto minimalista */
+    background: #e0e0e0; /* 🔹 Color sólido y suave */
+    margin: 40px 0; /* 🔹 Espaciado equilibrado */
+    border: none; /* 🔹 Elimina cualquier borde por defecto */
 }
+
 
 </style>
 
@@ -39,98 +82,29 @@ import HeroImage from "@static/images/hero-img.webp?url";
     <main class="page-content">
         <Modal client:load/>
         <CoverHero
-    title="Accionar Chile <span style='color: #ff8601;'>Coaching</span> que impulsa tu éxito."
-    paragraph="¡Conecta con Tu Poder! y Vive en Tu Máxima posibilidad!"
-    buttons={[
-        { link: "#Contacto", text: "Contáctanos", variant: "secondary" },
-        { link: "#Servicios", text: "Más Información", variant: "primary" },
-    ]}
-    image={HeroImage}
-/>
-        <LogosSlider client:load />
-        <div id="Servicios">
-        <LeadTexts
-            client:load
-            title="Nuestros Servicios"
-            contentText={[
-                {
-                    content: `
-                        <h3>
-                            <b>Programa de Coaching para adolescentes</b> - Acompañamiento y desarrollo personal para potenciar habilidades, seguridad y toma de decisiones en jóvenes.
-                        </h3>
-                    `,
-                },
-                {
-                    content: `
-                        <h3>
-                            <b>Escuela para padres</b> - Herramientas efectivas para fortalecer la comunicación y la crianza consciente en la familia.
-                        </h3>
-                    `,
-                },
-                {
-                    content: `
-                        <h3>
-                            <b>Programa de Coaching para emprendedores y networking</b> - Estrategias y mentoría para impulsar negocios, fortalecer habilidades y crear conexiones valiosas.
-                        </h3>
-                    `,
-                },
-                {
-                    content: `
-                        <h3>
-                            <b>Organización de grandes eventos con conferencistas internacionales</b> - Eventos exclusivos con expertos de talla mundial en desarrollo personal y profesional.
-                        </h3>
-                    `,
-                },
-                {
-                    content: `
-                        <h3>
-                            <b>Programas de coaching para empresas</b> - Capacitación y desarrollo de equipos para mejorar el liderazgo, la productividad y el bienestar organizacional.
-                        </h3>
-                    `,
-                },
-                {
-                    content: `
-                        <h3>
-                            <b>Programa de Coaching para personas de la tercera edad</b> - Acompañamiento para redescubrir nuevas oportunidades, fortalecer el bienestar y la calidad de vida en esta etapa.
-                        </h3>
-                    `,
-                },
-                {
-                    content: `
-                        <h3>
-                            <b>Coaching para parejas</b> - Mejora de la comunicación, resolución de conflictos y fortalecimiento del vínculo en la relación.
-                        </h3>
-                    `,
-                },
-                {
-                    content: `
-                        <h3>
-                            <b>Escuela para entrenadores</b> - Formación especializada para quienes desean convertirse en coaches profesionales y guiar a otros en su transformación.
-                        </h3>
-                    `,
-                },
-                {
-                    content: `
-                        <h3>
-                            <b>Talleres de Inteligencia Financiera</b> - Educación y estrategias prácticas para una gestión financiera consciente y efectiva.
-                        </h3>
-                    `,
-                },
-
+            title="Accionar Chile <span style='color: #ff8601;'>Coaching</span> que impulsa tu éxito."
+            paragraph="¡Conecta con Tu Poder! y Vive en Tu Máxima posibilidad!"
+            buttons={[
+                { link: "#Contacto", text: "Contáctanos", variant: "secondary" },
+                { link: "#Servicios", text: "Más Información", variant: "primary" },
             ]}
+            image={HeroImage}
         />
+        <LogosSlider client:load />
+
+        <div id="Servicios">
+            <!-- 🔹 Aquí usamos la nueva versión de LeadTexts con tarjetas -->
+            <LeadTexts client:load title="Nuestros Servicios" services={services} />
         </div>
-        <div class="hero-separator"></div>
+
+        
         <Team client:load />
 
         <div class="hero-separator"></div>
 
-
         <div id="Servici">
             <Container>
                 <FadeIn client:visible>
-                    <h2> </h2>
-                    <h2> </h2>
                     <h2>¿Por qué elegirnos?</h2>
                 </FadeIn>
             </Container>
@@ -158,12 +132,8 @@ import HeroImage from "@static/images/hero-img.webp?url";
                 ]}
             />
         </div>
-        
 
         <div class="hero-separator"></div>
-        
-        
         <div id="Contacto"><Contact client:load /></div>
-        
     </main>
 </Layout>

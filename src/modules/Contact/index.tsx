@@ -89,7 +89,7 @@ export const Contact: FC = () => {
                                     error={contactForm.formState.errors.message?.message}
                                 />
 
-                                {/* Contenedor del botón alineado a la derecha */}
+                                
                                 <S.ButtonWrapper>
                                     <button type="submit" disabled={contactForm.formState.isSubmitting}>
                                         <Button asButton={true} variant="secondary">

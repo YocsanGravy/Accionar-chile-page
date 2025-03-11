@@ -49,5 +49,6 @@ export const ButtonWrapper = styled.div`
     display: flex;
     justify-content: flex-end; /* Alinea el botón a la derecha */
     margin-top: 20px; /* Añade un margen superior para separación */
+    
 `;
 

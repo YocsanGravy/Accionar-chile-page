@@ -11,7 +11,7 @@ export const Navigation: FC = () => {
                 <S.NavigationListWrapper $isOpen={isOpen}>
                     <S.NavigationList>
                         <li>
-                            <a href="/">Hogar</a>
+                            <a href="/">Inicio</a>
                         </li>
                         <li>
                             <a href="/offers" className="active">
