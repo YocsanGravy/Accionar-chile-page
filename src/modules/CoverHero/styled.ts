@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Theme } from "@styles/colors";
+import { css } from "@emotion/react";
 
 export const CoverHeroWrapper = styled.section`
     position: relative;
@@ -12,6 +13,7 @@ export const CoverHeroWrapper = styled.section`
     background-position: center;
     background-repeat: no-repeat;
     color: white;
+    padding: 20px;
 
     /* Overlay */
     &::before {
@@ -22,6 +24,12 @@ export const CoverHeroWrapper = styled.section`
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen */
+    }
+
+    /* 🔹 En móviles, ajustamos la altura */
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 80px 20px; /* Espaciado adicional */
     }
 `;
 
@@ -37,12 +45,20 @@ export const CoverHeroContent = styled.div`
     h1 {
         font-size: 3.5rem;
         font-weight: bold;
+
+        @media (max-width: 768px) {
+            font-size: 2rem; /* 🔹 Reducimos tamaño en móviles */
+        }
     }
 
     p {
         font-size: 1.2rem;
         max-width: 600px;
         color: white;
+
+        @media (max-width: 768px) {
+            font-size: 1rem; /* 🔹 Texto más pequeño en móviles */
+        }
     }
 `;
 
@@ -50,6 +66,13 @@ export const ButtonWrapper = styled.div`
     display: flex;
     gap: 15px;
     margin-top: 20px;
+
+    /* 🔹 En móviles, los botones se apilan en columna */
+    @media (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
 `;
 
 export const ButtonLink = styled.a<{ variant: "primary" | "secondary" }>`
@@ -74,5 +97,10 @@ export const ButtonLink = styled.a<{ variant: "primary" | "secondary" }>`
     &:hover {
         background: ${({ variant }) => (variant === "primary" ? Theme.textDefault : "transparent")};
         color: ${({ variant }) => (variant === "primary" ? Theme.primary : Theme.tertiary)};
+    }
+
+    /* 🔹 En móviles, los botones ocupan el 80% del ancho */
+    @media (max-width: 768px) {
+        width: 80%;
     }
 `;
