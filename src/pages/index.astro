@@ -1,82 +1,54 @@
 ---
 import { Hero } from "@modules/Hero";
+import { CoverHero } from "../modules/CoverHero/CoverHero";
 import Layout from "../layouts/Layout.astro";
 import { LogosSlider } from "@modules/LogosSlider";
 import { LeadTexts } from "@modules/LeadTexts";
+import { Team } from "../modules/Team/Team"; 
+import { Container } from "@components/Container";
+import { Modal } from "../modules/Modal/Modal";
+
 
 import { BoxOffers } from "@modules/BoxOffers";
 import { ContentSection } from "@modules/ContentSection";
 import { FadeIn } from "@utils/animations/FadeIn";
 import { Contact } from "@modules/Contact";
+import HeroImage from "@static/images/hero-img.webp?url";
+
+
 ---
+
+
+<style>
+    .hero-separator {
+    width: 100%;
+    height: 30px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #ffffff,
+        #ffffff 10px,
+        #f2f2f2 10px,
+        #f2f2f2 20px
+    );
+
+}
+
+</style>
 
 <Layout title="Accionar Chile" description="Red Colaborativa">
     <main class="page-content">
-        <Hero
-            heroType="textImage"
-            client:load
-            content={{
-                title: `Accionar Chile <span style="color: #ff8601;">Coaching</span> que impulsa tu éxito.`,
-                paragraph: `¡Conecta con Tu Poder! y Vive en Tu Máxima posibilidad!`,
-                buttons: [
-                    {
-                        link: "#Contacto",
-                        text: "Contáctanos",
-                        variant: "secondary",
-                    },
-                    {
-                        link: "#Servicios",
-                        text: "Más Información",
-                        variant: "primary",
-                    },
-                ],
-                image: {
-                    srcLocal: "heroImg",
-                    alt: "Imagen HomeHero ",
-                    width: 300,
-                    height: 300,
-                },
-            }}
-        />
+        <Modal client:load/>
+        <CoverHero
+    title="Accionar Chile <span style='color: #ff8601;'>Coaching</span> que impulsa tu éxito."
+    paragraph="¡Conecta con Tu Poder! y Vive en Tu Máxima posibilidad!"
+    buttons={[
+        { link: "#Contacto", text: "Contáctanos", variant: "secondary" },
+        { link: "#Servicios", text: "Más Información", variant: "primary" },
+    ]}
+    image={HeroImage}
+/>
         <LogosSlider client:load />
-        <ContentSection
-            style={{
-                maxWidth: "600px",
-                margin: "0 auto",
-            }}
-        >
-            <FadeIn client:visible>
-                <h2>¿Por qué elegirnos?</h2>
-                <p>
-                    No solo te acompañamos en tu crecimiento individual, sino que también fomentamos una comunidad colaborativa donde el aprendizaje y el apoyo mutuo son la clave para lograr objetivos personales y colectivos.
-                </p>
-            </FadeIn>
-        </ContentSection>
         <div id="Servicios">
-            <BoxOffers
-                client:load
-                boxes={[
-                    {
-                        content: `
-                        <h2>Coaching con propósito</h2>
-                        <p>Te guiamos en un proceso de transformación real y significativo.</p>
-                        `,
-                    },
-                    {
-                        content: `
-                        <h2>Herramientas prácticas</h2>
-                        <p>Técnicas aplicables a tu vida diaria para potenciar tu desarrollo.</p>
-                        `,
-                    },
-                    {
-                        content: `
-                        <h2>Acompañamiento continuo</h2>
-                        <p>No estás solo en este camino; formamos parte de tu evolución.</p>
-                        `,
-                    },
-                ]}
-            />
-        </div>
         <LeadTexts
             client:load
             title="Nuestros Servicios"
@@ -147,6 +119,50 @@ import { Contact } from "@modules/Contact";
 
             ]}
         />
+        </div>
+        <div class="hero-separator"></div>
+        <Team client:load />
+
+        <div class="hero-separator"></div>
+
+
+        <div id="Servici">
+            <Container>
+                <FadeIn client:visible>
+                    <h2> </h2>
+                    <h2> </h2>
+                    <h2>¿Por qué elegirnos?</h2>
+                </FadeIn>
+            </Container>
+            <BoxOffers
+                client:load
+                boxes={[
+                    {
+                        content: `
+                        <h2>Coaching con propósito</h2>
+                        <p>Te guiamos en un proceso de transformación real y significativo.</p>
+                        `,
+                    },
+                    {
+                        content: `
+                        <h2>Herramientas prácticas</h2>
+                        <p>Técnicas aplicables a tu vida diaria para potenciar tu desarrollo.</p>
+                        `,
+                    },
+                    {
+                        content: `
+                        <h2>Acompañamiento continuo</h2>
+                        <p>No estás solo en este camino; formamos parte de tu evolución.</p>
+                        `,
+                    },
+                ]}
+            />
+        </div>
+        
+
+        <div class="hero-separator"></div>
+        
+        
         <div id="Contacto"><Contact client:load /></div>
         
     </main>

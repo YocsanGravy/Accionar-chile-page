@@ -2,6 +2,7 @@ import { type FC } from "react";
 import HeroImg from "./hero-img.webp";
 import Chart from "./chart.webp";
 import Logo from "./logo.webp";
+import Logo2 from "./logo_version_2.png";
 import PreviewPng from "./preview.webp";
 
 export const images = {
@@ -9,6 +10,7 @@ export const images = {
     heroImg: HeroImg,
     chart: Chart,
     logo: Logo,
+    lodo2: Logo2,
 };
 
 export type ImageProps = {

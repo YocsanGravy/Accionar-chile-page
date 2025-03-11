@@ -6,8 +6,9 @@ export enum Colors {
     tertiary = "#1213fc",
     tertiaryLight = "#2f3561",
     richBlack = "#0D1B2A",
-    dark = "#101118",
+    dark = "#0D1B2A",
     darkLighter = "#20222e",
+    naranjo ="#fd8607"
 }
 
 export enum DarkTheme {
@@ -21,6 +22,7 @@ export enum DarkTheme {
     // main color for text
     textDefault = Colors.dark,
     textSecondary = Colors.tertiaryLight,
+    masinfo = Colors.naranjo
 }
 
 export const ThemeVar = css`
@@ -28,6 +30,7 @@ export const ThemeVar = css`
         --primary: ${DarkTheme.primary};
         --secondary: ${DarkTheme.secondary};
         --tertiary: ${DarkTheme.tertiary};
+        --masinfo: ${DarkTheme.masinfo};
 
         --bg-element: ${DarkTheme.bgElement};
         --text-default: ${DarkTheme.textDefault};
@@ -42,4 +45,5 @@ export const Theme = {
     bgElement: "var(--bg-element)",
     textDefault: "var(--text-default)",
     textSecondary: "var(--text-secondary)",
+    masinfo :"var(--masinfo)",
 };

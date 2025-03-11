@@ -4,8 +4,18 @@ import styled from "@emotion/styled";
 import { Theme } from "@styles/colors";
 import { MediaQuery } from "@styles/mediaQuery";
 
+export const NavigationWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacia los elementos */
+    width: 100%;
+    padding: 10px 20px;
+`;
+
 export const NavigationStyled = styled.div`
     display: flex;
+    flex: 1;
+    justify-content: center; /* Centra los elementos */
     gap: 50px;
 
     ${MediaQuery.max("xl")} {
@@ -13,9 +23,7 @@ export const NavigationStyled = styled.div`
     }
 `;
 
-export const NavigationListWrapper = styled.nav<{
-    $isOpen: boolean;
-}>`
+export const NavigationListWrapper = styled.nav<{ $isOpen: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,33 +102,25 @@ export const NavigationList = styled.ul`
             background-color: ${Theme.tertiary};
             color: ${Theme.primary};
         }
-        img {
-            margin: 0 15px 0 0;
-
-            max-width: 30px;
-            max-height: 30px;
-
-            ${MediaQuery.max("xl")} {
-                margin: 0 10px 0 0;
-            }
-        }
     }
 `;
 
-export const NavigationSocials = styled(Socials)`
-    position: absolute;
-    bottom: 0;
-    background: ${Theme.bgElement};
-    width: 100%;
-    padding: 10px 0;
-    margin: 0;
-    left: 0;
+/* Botón de "Conectar" */
+export const ConnectButton = styled.a`
+    padding: 10px 20px;
+    border: 1.5px solid ${Theme.tertiary};
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: ${Theme.tertiary};
+    background: transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
 
-    li {
-        opacity: 1;
-    }
-
-    ${MediaQuery.min("lg")} {
-        display: none;
+    &:hover {
+        background: ${Theme.tertiary};
+        color: white;
     }
 `;

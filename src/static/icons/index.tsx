@@ -8,6 +8,8 @@ import IconArrowDown from "./icon-arrow-down.svg";
 import IconArrowCircle from "./icon-arrow-circle.svg";
 
 import IconAstro from "./icon-astro.svg";
+import IconSinergicos from "./logo_negro.png";
+
 
 export const icons = {
     arrowDown: IconArrowDown,
@@ -17,6 +19,7 @@ export const icons = {
     twitter: IconTwitter,
     linkedin: IconLinkedIn,
     astro: IconAstro,
+    sinergicos : IconSinergicos,
 };
 
 type IconName = {
@@ -45,4 +48,4 @@ export const Icon: FC<IconName> = ({ alt, iconData, ...rest }) => {
     );
 };
 
-export { IconAstro };
+export { IconAstro , IconSinergicos };

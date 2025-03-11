@@ -1,7 +1,8 @@
 ---
 import { Hero } from "@modules/Hero";
 import Layout from "../layouts/Layout.astro";
-import { LogosSlider } from "@modules/LogosSlider";
+
+import { LogosSlider } from "../modules/logoslider2"; 
 
 import { FadeIn } from "@utils/animations/FadeIn";
 import { Button } from "@components/Button";
@@ -9,7 +10,24 @@ import { Icon } from "@static/icons";
 import { Contact } from "@modules/Contact";
 import { BoxOffers } from "@modules/BoxOffers";
 import { Container } from "@components/Container";
+import { Team } from "../modules/Team/Team"; 
 ---
+
+<style>
+    .hero-separator {
+    width: 100%;
+    height: 30px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #ffffff,
+        #ffffff 10px,
+        #f2f2f2 10px,
+        #f2f2f2 20px
+    );
+
+}
+
+</style>
 
 <Layout
     title="Programa Sinergéticos | Desarrollo Personal y Comunitario"
@@ -56,6 +74,8 @@ import { Container } from "@components/Container";
             }}
         />
 
+        <div class="hero-separator"></div>
+
         <Hero
             heroType="textImage"
             client:load
@@ -73,6 +93,8 @@ import { Container } from "@components/Container";
             }}
         />
 
+        <div class="hero-separator"></div>
+
         <Hero
             heroType="textImage"
             client:load
@@ -88,6 +110,10 @@ import { Container } from "@components/Container";
                 },
             }}
         />
+
+        <div class="hero-separator"></div>
+        <Team client:load />
+        <div class="hero-separator"></div>
 
         <!-- Beneficios de la Comunidad Sinergéticos -->
         <section id="beneficios">
@@ -129,6 +155,11 @@ import { Container } from "@components/Container";
                 ]}
             />
         </section>
+
+        <div class="hero-separator"></div>
+
+        
+        
 
         <!-- Formulario de Contacto -->
         <Contact client:load />

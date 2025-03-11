@@ -66,38 +66,39 @@ export const Contact: FC = () => {
                 {!emailSend ? (
                     <FadeIn>
                         <FormStyled onSubmit={formSubmit}>
-                            <h2>
-                            ¿Tienes alguna pregunta o quieres trabajar junto a nosotros?  <b>¡Hablemos!</b>
-                            </h2>
-                            <p>
-                            Este formulario está desarrollado con <b>FormSubmit</b>.
-                            </p>
-                            <Input
-                                type="text"
-                                placeholder="Nombre *"
-                                register={contactForm.register("name")}
-                                error={contactForm.formState.errors.name?.message}
-                            />
-                            <Input
-                                type="email"
-                                placeholder="Correo Electronico *"
-                                register={contactForm.register("email")}
-                                error={contactForm.formState.errors.email?.message}
-                            />
-                            <Input
-                                type="textarea"
-                                placeholder="Escribienos .... *"
-                                register={contactForm.register("message")}
-                                error={contactForm.formState.errors.message?.message}
-                            />
+                                <h2>
+                                    ¿Tienes alguna pregunta o quieres trabajar junto a nosotros? <b>¡Hablemos!</b>
+                                </h2>
+                            
+                                <Input
+                                    type="text"
+                                    placeholder="Nombre *"
+                                    register={contactForm.register("name")}
+                                    error={contactForm.formState.errors.name?.message}
+                                />
+                                <Input
+                                    type="email"
+                                    placeholder="Correo Electrónico *"
+                                    register={contactForm.register("email")}
+                                    error={contactForm.formState.errors.email?.message}
+                                />
+                                <Input
+                                    type="textarea"
+                                    placeholder="Escríbenos .... *"
+                                    register={contactForm.register("message")}
+                                    error={contactForm.formState.errors.message?.message}
+                                />
 
-                            {/* Envolvemos el botón en un <button> normal para manejar 'disabled' */}
-                            <button type="submit" disabled={contactForm.formState.isSubmitting}>
-                                <Button asButton={true} variant="secondary">
-                                    {contactForm.formState.isSubmitting ? "Sending..." : "Submit"}
-                                </Button>
-                            </button>
-                        </FormStyled>
+                                {/* Contenedor del botón alineado a la derecha */}
+                                <S.ButtonWrapper>
+                                    <button type="submit" disabled={contactForm.formState.isSubmitting}>
+                                        <Button asButton={true} variant="secondary">
+                                            {contactForm.formState.isSubmitting ? "Enviando...." : "Enviar"}
+                                        </Button>
+                                    </button>
+                                </S.ButtonWrapper>
+                            </FormStyled>
+
 
                     </FadeIn>
                 ) : (
@@ -106,21 +107,7 @@ export const Contact: FC = () => {
                     </S.ContactThankYou>
                 )}
                 <S.ContactBox>
-                    <FadeIn delay={0.2}>
-                        <h2>Enviar por correo electrónico</h2>
-                        <TextBox
-                            bgText="Email"
-                            boxAsLink={true}
-                            href="mailto:jocsan.riquelme.m@gmail.com"
-                            target="_blank"
-                            children={`
-                            <h3>Haga Click para enviar correo electrónico.</h3>
-                            <p>
-                                Usa tu plataforma de correos para contactarte con nosotros
-                            </p>
-                            `}
-                        />
-                    </FadeIn>
+                    
                 </S.ContactBox>
             </S.ContainerStyled>
         </S.ContactStyled>
