@@ -3,6 +3,8 @@ import { Hero } from "@modules/Hero";
 import Layout from "../layouts/Layout.astro";
 import { Contact as ContactModule } from "@modules/Contact";
 import { FadeIn } from "@utils/animations/FadeIn";
+import { FloatingButton } from "../modules/FloatingButton/FloatingButton";
+
 ---
 
 <Layout
@@ -10,6 +12,7 @@ import { FadeIn } from "@utils/animations/FadeIn";
     description="¿Tienes alguna pregunta o quieres trabajar junto a nosotros? ¡Hablemos!"
 >
     <main class="page-content">
+        <FloatingButton />  
         <Hero heroType="center" client:load>
             <FadeIn delay={0.2} client:load>
                 <h1>Contacto</h1>

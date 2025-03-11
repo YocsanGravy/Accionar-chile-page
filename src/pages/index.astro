@@ -12,6 +12,7 @@ import { ContentSection } from "@modules/ContentSection";
 import { FadeIn } from "@utils/animations/FadeIn";
 import { Contact } from "@modules/Contact";
 import HeroImage from "@static/images/hero-img.webp?url";
+import { FloatingButton } from "../modules/FloatingButton/FloatingButton";
 
 // 🔹 Importamos los iconos para los servicios
 import { FaUserGraduate, FaUsers, FaBriefcase, FaMicrophone, FaBuilding, FaHeart, FaHandHoldingHeart, FaChalkboardTeacher, FaPiggyBank } from "react-icons/fa";
@@ -81,6 +82,7 @@ const services = [
 <Layout title="Accionar Chile" description="Red Colaborativa">
     <main class="page-content">
         <Modal client:load/>
+        <FloatingButton />  
         <CoverHero
             title="Accionar Chile <span style='color: #ff8601;'>Coaching</span> que impulsa tu éxito."
             paragraph="¡Conecta con Tu Poder! y Vive en Tu Máxima posibilidad!"

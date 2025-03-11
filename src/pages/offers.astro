@@ -11,6 +11,8 @@ import { Contact } from "@modules/Contact";
 import { BoxOffers } from "@modules/BoxOffers";
 import { Container } from "@components/Container";
 import { Team } from "../modules/Team/Team"; 
+import { FloatingButton } from "../modules/FloatingButton/FloatingButton";
+
 ---
 
 <style>
@@ -29,6 +31,7 @@ import { Team } from "../modules/Team/Team";
     description="Descubre el programa Sinergéticos y potencia tu crecimiento personal y profesional."
 >
     <main class="page-content">
+        <FloatingButton />
         <!-- Sección de Bienvenida -->
         <Hero heroType="center" client:load>
             <FadeIn delay={0.2} client:load>
